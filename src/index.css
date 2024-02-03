@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --font-family: "Inter", sans-serif;
+    --font-weight-regular: 400;
+    --font-weight-bold: 700;
+    --line-height: 1.6;
+    --primary-text-color: #ffffff;
+    --background-color: #111111;
+
+    font-family: var(--font-family);
+    line-height: var(--line-height);
+    font-weight: var(--font-weight-regular);
+
+    color: var(--primary-text-color);
+    background-color: var(--background-color);
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
