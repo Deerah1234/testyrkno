@@ -70,9 +70,10 @@ const useQuizLogic = (quizData) => {
         )} seconds after a wonderful blog by @0xDeerah! 🚀 #QuizMaster #ChallengeAccepted`;
 
         // Add image URL and mention
-        const imageUrl = "../../assets/twittersharebanner_v1.png";
+        // const imageUrl =
+        //     "https://raw.githubusercontent.com/Deerah1234/testyrkno/master/src/assets/twittersharebanner_v1.png";
         const mention = "@0xDeerah";
-        const finalTweetText = `${tweetText} ${imageUrl} Thanks ${mention}`;
+        const finalTweetText = `${tweetText} Thanks ${mention}`;
 
         // Create a Twitter share URL
         const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
