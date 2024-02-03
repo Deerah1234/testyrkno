@@ -65,20 +65,24 @@ const useQuizLogic = (quizData) => {
 
     const handleShareTwitter = () => {
         // Implement logic to share on Twitter
+
+        // Add image URL, GitHub link, and mention
+        // const imageUrl =
+        //     "https://raw.githack.com/Deerah1234/testyrkno/master/src/assets/twittersharebanner_v1.png";
+        const githubLink = "https://github.com/Deerah1234/testyrkno";
+        const mention = "@0xDeerah";
+
         const tweetText = `I scored ${score} on the quiz and spent ${Math.floor(
             totalTimeSpent / 1000
-        )} seconds after a wonderful blog by @0xDeerah! 🚀 #QuizMaster #ChallengeAccepted`;
+        )} seconds after a wonderful blog by ${mention}! 🚀 #QuizMaster #ChallengeAccepted`;
 
-        // Add image URL and mention
-        // const imageUrl =
-        //     "https://raw.githubusercontent.com/Deerah1234/testyrkno/master/src/assets/twittersharebanner_v1.png";
-        const mention = "@0xDeerah";
-        const finalTweetText = `${tweetText} Thanks ${mention}`;
+        // Append image and GitHub link to the tweet
+        const finalTweetText = `${tweetText}\n\nCheck out the quiz on GitHub: ${githubLink}`;
 
         // Create a Twitter share URL
         const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
             finalTweetText
-        )}`;
+        )}&url=${encodeURIComponent(githubLink)}`;
 
         // Open the Twitter share page in a new window
         window.open(twitterUrl, "_blank");
