@@ -9,7 +9,7 @@ const NavigationButtons = ({
     isQuizOver,
     selectedOption,
 }) => (
-    <div className="flex justify-between mt-5">
+    <div className="flex items-center justify-between mt-5">
         <button
             className={`px-6 py-3 text-white rounded-md ${
                 currentQuestion === 0 || isQuizOver || selectedOption === null

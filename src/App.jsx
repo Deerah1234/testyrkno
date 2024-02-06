@@ -1,5 +1,4 @@
-// eslint-disable-next-line no-unused-vars
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Quiz, Welcome } from "./components";
 import quizData from "./constants/quizData";
 

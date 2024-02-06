@@ -5,24 +5,20 @@ import CorrectAnswerShowcase from "./CorrectAnswerShowcase";
 
 const QuizCompletion = ({
     score,
-    timeSpent,
     onReset,
     onShareTwitter,
     onSendMessage,
     correctAnswers,
 }) => {
     return (
-        <div className="flex flex-col items-center p-5">
+        <div className="flex flex-col items-center p-5" id="quiz-container">
             <div className="w-full max-w-lg">
                 <div className="mb-10 text-3xl font-bold text-center text-green-500">
                     Quiz Completed!
                 </div>
                 <div className="p-6 mb-6 text-center text-gray-800 bg-white rounded-md shadow-xl md:p-10 md:mb-10">
-                    <div className="mb-3 text-lg">
+                    <div className="text-lg font-bold">
                         Your Score: {score} / {correctAnswers.length}
-                    </div>
-                    <div className="mb-3 text-lg">
-                        Time Spent: {timeSpent} seconds
                     </div>
                 </div>
                 <CorrectAnswerShowcase correctAnswers={correctAnswers} />

@@ -6,10 +6,10 @@ const quizData = [
         options: [
             "Using `npm run build`",
             "Using `git push origin master`",
-            "Using `gh-pages -d build`",
+            "gh-pages -d dist`",
             "Using `npm deploy`",
         ],
-        correctAnswer: "Using `gh-pages -d build`",
+        correctAnswer: "gh-pages -d dist`",
     },
     {
         id: 2,
@@ -56,21 +56,22 @@ const quizData = [
     {
         id: 6,
         question:
-            "What command is used to initialize a new React app using Create React App?",
+            "What is the purpose of the 'homepage' field in the package.json file when deploying to GitHub Pages?",
         options: [
-            "`create-react-app`",
-            "`npm init react-app`",
-            "`react-create-app`",
-            "`npm create-react-app`",
+            "It specifies the author's homepage",
+            "It sets the homepage URL for the deployed app",
+            "It's used for internal package management",
+            "GitHub Pages doesn't require a 'homepage' field",
         ],
-        correctAnswer: "`npx create-react-app <app-name>`",
+        correctAnswer: "It sets the homepage URL for the deployed app",
     },
+
     {
         id: 7,
         question:
-            "What folder contains the build output of a React app created with Create React App?",
+            "What folder contains the build output of a React app created with Vite?",
         options: ["`src`", "`public`", "`build`", "`dist`"],
-        correctAnswer: "`build`",
+        correctAnswer: "`dist`",
     },
     {
         id: 8,

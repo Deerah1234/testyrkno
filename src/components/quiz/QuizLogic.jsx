@@ -9,8 +9,8 @@ const useQuizLogic = (quizData) => {
         Array(quizData.length).fill(null)
     );
     const [startTime, setStartTime] = useState(0);
-    const [totalTimeSpent, setTotalTimeSpent] = useState(0);
     const [correctAnswers, setCorrectAnswers] = useState([]);
+    const totalQuestions = quizData.length;
 
     useEffect(() => {
         if (timer > 0 && !isQuizOver) {
@@ -21,7 +21,6 @@ const useQuizLogic = (quizData) => {
             return () => clearTimeout(timeout);
         } else if (!isQuizOver) {
             setIsQuizOver(true);
-            setTotalTimeSpent(Date.now() - startTime);
         }
     }, [timer, isQuizOver, startTime]);
 
@@ -74,20 +73,15 @@ const useQuizLogic = (quizData) => {
     };
 
     const handleShareTwitter = () => {
-        // Implement logic to share on Twitter
-
-        // Add image URL, GitHub link, and mention
-        // const imageUrl =
-        //     "https://raw.githack.com/Deerah1234/testyrkno/master/src/assets/twittersharebanner_v1.png";
         const githubLink = "https://github.com/Deerah1234/testyrkno";
         const mention = "@0xDeerah";
 
-        const tweetText = `I scored ${score} on the quiz and spent ${Math.floor(
-            totalTimeSpent / 1000
-        )} seconds after a wonderful blog by ${mention}! 🚀 #QuizMaster #ChallengeAccepted`;
+        const tweetText = `Just aced the quiz after reading an amazing blog by ${mention}! 🚀 
+        
+        Scored ${score} out of ${totalQuestions}. Can you beat my score? Try it now! #QuizMaster #ChallengeAccepted`;
 
-        // Append image and GitHub link to the tweet
-        const finalTweetText = `${tweetText}\n\nCheck out the quiz on GitHub: ${githubLink}`;
+        // Append GitHub link to the tweet
+        const finalTweetText = `${tweetText}\n\nCheck out the quiz app on GitHub: ${githubLink}`;
 
         // Create a Twitter share URL
         const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
@@ -111,9 +105,6 @@ const useQuizLogic = (quizData) => {
         window.location.href = mailtoLink;
     };
 
-    const totalQuestions = quizData.length;
-    const timeSpent = Math.floor(totalTimeSpent / 1000);
-
     return {
         currentQuestion,
         score,
@@ -128,7 +119,6 @@ const useQuizLogic = (quizData) => {
         handleShareTwitter,
         handleSendMessage,
         totalQuestions,
-        timeSpent,
         correctAnswers,
     };
 };

@@ -20,7 +20,6 @@ const Quiz = ({ quizData }) => {
         handleShareTwitter,
         handleSendMessage,
         totalQuestions,
-        timeSpent,
         correctAnswers,
     } = useQuizLogic(quizData);
 
@@ -29,7 +28,6 @@ const Quiz = ({ quizData }) => {
             {isQuizOver ? (
                 <QuizCompletion
                     score={score}
-                    timeSpent={timeSpent}
                     onReset={handleResetQuiz}
                     onShareTwitter={handleShareTwitter}
                     onSendMessage={handleSendMessage}

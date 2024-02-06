@@ -39,7 +39,7 @@ const CorrectAnswerShowcase = ({ correctAnswers }) => {
             ))}
             {currentQuestionIndex < correctAnswers.length - 1 && (
                 <button
-                    className="mt-4 btn-primary"
+                    className="mt-4 bg-[#00509e] px-6 py-3 text-white rounded-md"
                     onClick={handleNextQuestion}
                 >
                     Next
